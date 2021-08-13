@@ -1,2 +1,9 @@
-﻿print("Your main file. if this is a module packege it should be in a ./[yourproject]/main.py with a __init__.py file")
-  
+﻿from fastapi import Body, FastAPI
+import pprint
+
+app = FastAPI()
+
+@app.post("/")
+def root(teste = Body(None)):
+    pprint.pprint(teste)
+    return teste
