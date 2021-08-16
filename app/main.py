@@ -1,10 +1,11 @@
 ﻿from typing import Dict, Optional
 from fastapi import Body, FastAPI
-from pydantic import BaseModel
-from models.models import AllPlayers 
+from models.player_models import AllPlayers 
+from pprint import pprint
 
 app = FastAPI()
 
 @app.post("/")
-def root(allplayers: Dict[str, AllPlayers]):
-    return allplayers
+def root(payload: AllPlayers):
+    pprint(payload)
+    return payload
