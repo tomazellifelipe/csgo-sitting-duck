@@ -54,7 +54,5 @@ class Player(Position, PlayerID):
     match_stats: Optional[MatchStats] = None
     weapons: Optional[Dict[str, Weapons]] = None
 
-class AllPlayers(BaseModel):
-    allplayers: Dict[str, Player]
-    previously: str = None
-    added: str = None
+class AllPlayers(Player):
+    pass
