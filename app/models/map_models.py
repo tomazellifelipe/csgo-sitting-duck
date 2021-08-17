@@ -21,6 +21,10 @@ class MapInfo(BaseModel):
     souvenier_total: Optional[int] = None
 
 
-class Map(MapInfo):
+class RoundInfo(BaseModel):
+    round_wins: Optional[Dict[str, str]] = None
+
+
+class Map(MapInfo, RoundInfo):
     pass
 

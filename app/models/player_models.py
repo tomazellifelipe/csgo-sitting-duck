@@ -54,5 +54,3 @@ class Player(Position, PlayerID):
     match_stats: Optional[MatchStats] = None
     weapons: Optional[Dict[str, Weapons]] = None
 
-class AllPlayers(Player):
-    pass
