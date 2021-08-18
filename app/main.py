@@ -2,6 +2,7 @@
 
 from fastapi import Body, FastAPI
 
+import gamestate.read_cfg
 from models.map_models import Map
 from models.misc_models import Added, Previously 
 from models.player_models import Player
