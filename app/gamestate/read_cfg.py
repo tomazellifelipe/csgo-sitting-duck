@@ -14,4 +14,5 @@ data_options = ['provider', 'player_id', 'player_state', 'player_match_stats',
                 'allplayers_match_stats', 'allplayers_position', 'allplayers_weapons', 'map',
                 'map_round_wins', 'round', 'bomb', 'phase_countdowns']
 
-payload_config = parse_cfg('/home/felipet/github/csgo-sitting-duck/gamestate_integration_sittingduck.cfg', data_option)
+payload_config = parse_cfg('/home/felipet/github/csgo-sitting-duck/gamestate_integration_sittingduck.cfg', data_options)
+print(payload_config)
