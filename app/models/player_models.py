@@ -13,22 +13,18 @@ class MatchStats(BaseModel):
 
 
 class PlayerID(BaseModel):
-    if payload_config.get('player_id', 0) or payload_config.get('allplayers_id', 0):
-        if payload_config.get('player_id', 0):
-            steamid: Optional[str] = None
-        clan: Optional[str] = None
-        name: Optional[str] = None
-        observer_slot: Optional[int] = None
-        team: Optional[str] = None
-        activity: Optional[str] = None
+    steamid: Optional[str] = None
+    clan: Optional[str] = None
+    name: Optional[str] = None
+    observer_slot: Optional[int] = None
+    team: Optional[str] = None
+    activity: Optional[str] = None
 
 
 class Position(BaseModel):
-    if payload_config.get('player_position', 0) or payload_config.get('allplayers_position', 0):
-        if payload_config.get('player_position', 0):
-            spectarget: Optional[str] = None
-        forward: Optional[str] = None
-        position: Optional[str] = None
+    spectarget: Optional[str] = None
+    forward: Optional[str] = None
+    position: Optional[str] = None
     
 
 class State(BaseModel):
@@ -55,10 +51,7 @@ class Weapons(BaseModel):
 
 
 class Player(Position, PlayerID):
-    if payload_config.get('player_state', 0) or payload_config.get('allplayers_state', 0):
-        state: Optional[State] = None
-    if payload_config.get('player_match_stats', 0) or payload_config.get('allplayers_match_stats', 0):
-        match_stats: Optional[MatchStats] = None
-    if payload_config.get('player_weapons', 0) or payload_config.get('allplayers_weapons', 0):
-        weapons: Optional[Dict[str, Union[Weapons, bool]]] = None
+    state: Optional[State] = None
+    match_stats: Optional[MatchStats] = None
+    weapons: Optional[Dict[str, Union[Weapons, bool]]] = None
     
