@@ -1,6 +1,5 @@
 from typing import Dict, Optional, Union
 
-from gamestate.read_cfg import payload_config
 from pydantic import BaseModel, Field
 
 
