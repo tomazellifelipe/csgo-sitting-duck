@@ -14,7 +14,8 @@ class MatchStats(BaseModel):
 
 class PlayerID(BaseModel):
     if payload_config.get('player_id', 0) or payload_config.get('allplayers_id', 0):
-        steamid: Optional[str] = None
+        if payload_config.get('player_id', 0):
+            steamid: Optional[str] = None
         clan: Optional[str] = None
         name: Optional[str] = None
         observer_slot: Optional[int] = None
@@ -24,7 +25,8 @@ class PlayerID(BaseModel):
 
 class Position(BaseModel):
     if payload_config.get('player_position', 0) or payload_config.get('allplayers_position', 0):
-        spectarget: Optional[str] = None
+        if payload_config.get('player_position', 0):
+            spectarget: Optional[str] = None
         forward: Optional[str] = None
         position: Optional[str] = None
     
