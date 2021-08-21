@@ -12,7 +12,7 @@ class MatchStats(BaseModel):
 
 
 class PlayerID(BaseModel):
-    steamid: Optional[str] = None
+    steamid: Optional[str] = Field(None, description="This field is omit when it comes from 'allplayers' info")
     clan: Optional[str] = None
     name: Optional[str] = None
     observer_slot: Optional[int] = None
@@ -21,7 +21,7 @@ class PlayerID(BaseModel):
 
 
 class Position(BaseModel):
-    spectarget: Optional[str] = None
+    spectarget: Optional[str] = Field(None, description="This field is omit when it comes 'allplayers' info")
     forward: Optional[str] = None
     position: Optional[str] = None
     
@@ -52,5 +52,5 @@ class Weapons(BaseModel):
 class Player(Position, PlayerID):
     state: Optional[State] = None
     match_stats: Optional[MatchStats] = None
-    weapons: Optional[Dict[str, Union[Weapons, bool]]] = None
-    
+    weapons: Optional[Dict[str, Union[Weapons, bool]]] = Field(None, description="This field return boolean when it comes from 'added' info")
+
