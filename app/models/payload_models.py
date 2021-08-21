@@ -10,7 +10,7 @@ from models.server_models import Bomb, PhaseCountdowns, Provider, Round
 
 class Payload(BaseModel):
     player: Optional[Player] = None
-    allplayers: Optional[Dict[str, Player]] = None
+    allplayers: Optional[Dict[str, Player]] = None 
     bomb: Optional[Bomb] = None
     map_info: Optional[Map] = Field(None, alias='map')
     phase_countdowns: Optional[PhaseCountdowns] = None 
